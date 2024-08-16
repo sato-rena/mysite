@@ -1,146 +1,148 @@
 package curriculum_A;
 
 public class Qes1_13 {
-	
-	public class Main {
-	    public static void main(String[] args) {
-	        // ローカル変数の宣言
-	        byte byteVar;
-	        short shortVar;
-	        int intVar;
-	        long longVar;
 
-	        double doubleVar;
+    public static void main(String[] args) {
+        // 1. ローカル変数の宣言
+        byte byteVar;
+        short shortVar;
+        int intVar;
+        long longVar;
 
-	        char charVar;
-	        String stringVar;
+        double doubleVar;
 
-	        boolean booleanVar;
+        char charVar;
+        String stringVar;
 
-	        // 2. 初期化
-	        byteVar = 0;
-	        shortVar = 0;
-	        intVar = 0;
-	        longVar = 0L;
+        boolean booleanVar;
 
-	        doubleVar = 0.0;
+        // 2. 初期化
+        byteVar = 0;
+        shortVar = 0;
+        intVar = 0;
+        longVar = 0L;
 
-	        charVar = '\u0000';
-	        stringVar = "";
+        doubleVar = 0.0;
 
-	        booleanVar = false;
+        charVar = '\u0000';
+        
+        // string型の初期値修正
+        stringVar = null;
 
-	        // 3. 値の代入
-	        byteVar = 10;
-	        shortVar = 100;
-	        intVar = 1000;
-	        longVar = 10000L;
+        booleanVar = false;
 
-	        doubleVar = 10.5;
+        // 3. 値の代入
+        byteVar = 10;
+        shortVar = 100;
+        intVar = 1000;
+        longVar = 10000L;
 
-	        charVar = 'a';
-	        stringVar = "ハロー";
+        doubleVar = 10.5;
 
-	        booleanVar = true;
+        charVar = 'a';
+        stringVar = "ハロー";
 
-	        // 4. 指定通りのコンソール出力
-	        // 11110を2回出力
-	        int sum1 = byteVar + shortVar + intVar + (int) longVar;
-	        System.out.println(sum1 + "\t" + sum1);
+        booleanVar = true;
 
-	        // 20を2回出力
-	        int doubleByteVar = byteVar * 2;
-	        System.out.println(doubleByteVar + "\t" + doubleByteVar);
+        // 4. コンソール出力
+        // 11110を2回
+        int sum1 = byteVar + shortVar + intVar + (int) longVar;
+        System.out.println(sum1 + "\t" + sum1);
 
-	        // 'a ハロー true'を2回出力
-	        System.out.println(charVar + " " + stringVar + " " + booleanVar + "\t" + charVar + " " + stringVar + " " + booleanVar);
+        // 20を2回
+        int doubleByteVar = byteVar * 2;
+        System.out.println(doubleByteVar + "\t" + doubleByteVar);
 
-	        // 11130を2回出力（11110 + 20）
-	        int sum2 = sum1 + doubleByteVar;
-	        System.out.println(sum2 + "\t" + sum2 + "\t数字を全て足す");
+        // 'a ハロー true'を2回
+        System.out.println(charVar + " " + stringVar + " " + booleanVar + "\t" + charVar + " " + stringVar + " " + booleanVar);
 
-	        // 10000000000を2回出力（10 * 100 * 1000 * 10000）
-	        long product = byteVar * shortVar * intVar * longVar;
-	        System.out.println(product + "\t" + product + "\t小数点以外の数字を全てかける");
+        // 11130を2回（11110 + 20）
+        int sum2 = sum1 + doubleByteVar;
+        System.out.println(sum2 + "\t" + sum2 + "\t数字を全て足す");
 
-	        // 0.105を2回出力（10.5 / 100）
-	        double division = doubleVar / shortVar;
-	        System.out.println(division + "\t" + division + "\t10.5割る100をする");
+        // 10000000000を2回（10 * 100 * 1000 * 10000）
+        long product = byteVar * shortVar * intVar * longVar;
+        System.out.println(product + "\t" + product + "\t小数点以外の数字を全てかける");
 
-	        // -90を2回出力（10 - 100）
-	        int subtraction = byteVar - shortVar;
-	        System.out.println(subtraction + "\t" + subtraction + "\t10引く100をする");
+        // 0.105を2回（10.5 / 100）
+        double division = doubleVar / shortVar;
+        System.out.println(division + "\t" + division + "\t10.5割る100をする");
 
-	        // 5. 修正したプログラム
-	        String num = "20";
-	        int num1 = 23;
-	        System.out.println("ハローJAVA" + (Integer.parseInt(num) + num1));
+        // -90を2回（10 - 100）
+        int subtraction = byteVar - shortVar;
+        System.out.println(subtraction + "\t" + subtraction + "\t10引く100をする");
 
-	        // 6. 人の情報を変数に代入して出力
-	        String name = "山田太郎";
-	        int age = 18;
-	        double height = 170.5;
-	        double weight = 62.2;
-	        String favoriteFood = "寿司";
+        // 5. 修正
+        String num = "20";
+        int num1 = 23;
+        System.out.println("ハローJAVA" + (Integer.parseInt(num) + num1));
 
-	        System.out.println("初めまして" + name + "です");
-	        System.out.println("年齢は" + age + "歳です");
-	        System.out.println("身長は" + height + "cmです");
-	        System.out.println("体重は" + weight + "kgです");
-	        System.out.println("好きな食べ物は" + favoriteFood + "です");
+        // 6. フォーマット代入
+        String name = "山田太郎";
+        int age = 18;
+        double height = 170.5;
+        double weight = 62.2;
+        String favoriteFood = "寿司";
 
-	        // 7. BMIの計算と出力
-	        double bmi = weight / ((height / 100) * (height / 100));
-	        System.out.println("BMIは" + bmi + "です");
+        System.out.println("初めまして" + name + "です");
+        System.out.println("年齢は" + age + "歳です");
+        System.out.println("身長は" + height + "cmです");
+        System.out.println("体重は" + weight + "kgです");
+        System.out.println("好きな食べ物は" + favoriteFood + "です");
 
-	        // 8. 再代入して出力
-	        name = "鈴木一郎";
-	        age = 24;
-	        height = 168.5;
-	        weight = 64.2;
-	        favoriteFood = "オムライス";
+        // 7. BMI
+        double bmi = weight / ((height / 100) * (height / 100));
+        System.out.println("BMIは" + bmi + "です");
 
-	        bmi = weight / ((height / 100) * (height / 100));
+        // 8. 再代入
+        name = "鈴木一郎";
+        age = 24;
+        height = 168.5;
+        weight = 64.2;
+        favoriteFood = "オムライス";
 
-	        System.out.println("初めまして" + name + "です");
-	        System.out.println("年齢は" + age + "歳です");
-	        System.out.println("身長は" + height + "cmです");
-	        System.out.println("体重は" + weight + "kgです");
-	        System.out.println("好きな食べ物は" + favoriteFood + "です");
-	        System.out.println("BMIは" + bmi + "です");
+        bmi = weight / ((height / 100) * (height / 100));
 
-	        // 9. 数値の和算で自己代入して出力
-	        age *= 2;
-	        height *= 2;
-	        weight *= 2;
+        System.out.println("初めまして" + name + "です");
+        System.out.println("年齢は" + age + "歳です");
+        System.out.println("身長は" + height + "cmです");
+        System.out.println("体重は" + weight + "kgです");
+        System.out.println("好きな食べ物は" + favoriteFood + "です");
+        System.out.println("BMIは" + bmi + "です");
 
-	        bmi = weight / ((height / 100) * (height / 100));
+        // 9. 自己代入
+        age *= 2;
+        height *= 2;
+        weight *= 2;
 
-	        System.out.println("初めまして" + name + "です");
-	        System.out.println("年齢は" + age + "歳です");
-	        System.out.println("身長は" + height + "cmです");
-	        System.out.println("体重は" + weight + "kgです");
-	        System.out.println("好きな食べ物は" + favoriteFood + "です");
-	        System.out.println("BMIは" + bmi + "です");
+        bmi = weight / ((height / 100) * (height / 100));
 
-	        // 10. 年齢が25歳以上ならtrueを出力（if文を使用しない）
-	        System.out.println(age >= 25);
+        System.out.println("初めまして" + name + "です");
+        System.out.println("年齢は" + age + "歳です");
+        System.out.println("身長は" + height + "cmです");
+        System.out.println("体重は" + weight + "kgです");
+        System.out.println("好きな食べ物は" + favoriteFood + "です");
+        System.out.println("BMIは" + bmi + "です");
 
-	        // 11. 年齢・身長・体重を文字列型に変換し繋げて出力
-	        String ageStr = Integer.toString(age);
-	        String heightStr = Double.toString(height);
-	        String weightStr = Double.toString(weight);
-	        System.out.println(ageStr + heightStr + weightStr);
+        // 年齢を再度24に設定
+        age = 24;
 
-	        // 12. 年齢・身長を整数型に変換して出力
-	        int ageInt = Integer.parseInt(ageStr);
-	        int heightInt = (int) Double.parseDouble(heightStr);
-	        System.out.println(ageInt);
-	        System.out.println(heightInt);
+        // 10. 年齢が25歳以上ならtrue（if文を使用しない）
+        System.out.println(age >= 25);
 
-	        // 13. 年齢が25もしくは身長が160以上であればtrueを出力（if文を使用しない）
-	        System.out.println(ageInt >= 25 || heightInt >= 160);
-	    }
-	}
+        // 11. 年齢・身長・体重を文字列型に変換
+        String ageStr = Integer.toString(age);
+        String heightStr = Double.toString(height);
+        String weightStr = Double.toString(weight);
+        System.out.println(ageStr + heightStr + weightStr);
 
+        // 12. 年齢・身長を整数型に変換
+        int ageInt = Integer.parseInt(ageStr);
+        int heightInt = (int) Double.parseDouble(heightStr);
+        System.out.println(ageInt);
+        System.out.println(heightInt);
+
+        // 13. 年齢が25もしくは身長が160以上であればtrue（if文を使用しない）
+        System.out.println(ageInt >= 25 || heightInt >= 160);
+    }
 }
