@@ -22,7 +22,7 @@ public class Curriculum_New_1_18 {
     }
 
     // Q4: Q2をオーバーロードして引数を小数2つに変更し、引数同士を和算しコンソールに出力
-    public static void add(double a, double b) {
+    public static void multiply(double a, double b) {  // 同じメソッド名でオーバーロード
         System.out.println(a + b);
     }
 
@@ -69,12 +69,12 @@ public class Curriculum_New_1_18 {
         // Q2
         multiply(4, 5);
 
+        // Q4（オーバーロードされたメソッドの呼び出し）
+        multiply(2.5, 3.5);
+
         // Q3
         int[] numbers = {1, 2, 3, 4, 5};
         printArray(numbers);
-
-        // Q4
-        add(2.5, 3.5);
 
         // Q5
         int[] randomNumbers = generateRandomNumbers(10);
