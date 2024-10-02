@@ -9,22 +9,21 @@ public class curriculum1_27 {
         String[] animalsData = input.split(",");
 
         // コンソール入力
-        System.out.println("動物名を入力してください:");
+        System.out.println("動物情報を入力してください（例: ライオン:2.1:80）:");
         
         Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();  // ユーザーから動物名を入力
+        String userInput = scanner.nextLine();  // ユーザーから動物情報を入力
 
         // 動物情報を出力
         boolean found = false;
         for (String data : animalsData) {
-            String[] attributes = data.split(":");
-            String name = attributes[0];
-            double length = Double.parseDouble(attributes[1]);
-            int speed = Integer.parseInt(attributes[2]);
-            String scientificName = getScientificName(name);
-            
-            
-            if (name.equals(userInput)) {
+            if (data.equals(userInput)) {
+                String[] attributes = data.split(":");
+                String name = attributes[0];
+                double length = Double.parseDouble(attributes[1]);
+                int speed = Integer.parseInt(attributes[2]);
+                String scientificName = getScientificName(name);
+                
                 printInfo(name, length, speed, scientificName);
                 found = true;
                 break;  
@@ -33,7 +32,7 @@ public class curriculum1_27 {
         
         // 動物が見つからなかった場合のメッセージ
         if (!found) {
-            System.out.println("指定された動物は見つかりませんでした。");
+            System.out.println("指定された動物情報は見つかりませんでした。");
         }
 
         scanner.close();
